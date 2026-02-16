@@ -96,3 +96,21 @@
 .logout-btn:hover {
   background: #8e0000;
 }
+
+.logo a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo a:visited {
+  color: white;
+}
+
+.logo a:hover {
+  color: white;
+}
+
+.logo a.active {
+  color: white;
+  border-bottom: none;
+}

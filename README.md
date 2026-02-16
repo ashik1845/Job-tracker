@@ -1,4 +1,4 @@
-# 🚀 Smart Job Tracker
+# 🚀HireFlow – Multi-User Job Application Tracking Platform
 
 A full-stack multi-user job application tracking system built with the MERN stack.  
 Users can register, log in securely, track applications using a Kanban board, and analyze job search performance with interactive dashboards.
@@ -117,8 +117,8 @@ smart-job-tracker/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/smart-job-tracker.git
-cd smart-job-tracker
+git clone https://github.com/ashik1845/Job-tracker.git
+cd Job-tracker
 ```
 
 ---

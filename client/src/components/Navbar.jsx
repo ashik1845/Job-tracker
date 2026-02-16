@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">Smart Job Tracker</div>
+      <div className="logo"><NavLink to="/">HireFlow</NavLink></div>
 
       <div className="nav-links">
         {user ? (
