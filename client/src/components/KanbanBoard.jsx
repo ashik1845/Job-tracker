@@ -36,13 +36,7 @@ const DraggableCard = ({ app }) => {
     transform: CSS.Translate.toString(transform)
   };
 
-  const sensors = useSensors(
-  useSensor(PointerSensor, {
-    activationConstraint: {
-      distance: 5,
-    },
-  })
-);
+
 
 
   return (
@@ -85,6 +79,14 @@ const Column = ({ id, apps }) => {
 
 
 const KanbanBoard = ({ apps, fetchApps }) => {
+
+    const sensors = useSensors(
+  useSensor(PointerSensor, {
+    activationConstraint: {
+      distance: 5,
+    },
+  })
+);
 
   const handleDragEnd = async (event) => {
     const { active, over } = event;
