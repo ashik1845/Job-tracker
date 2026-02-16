@@ -1,8 +1,12 @@
 import React from "react";
 import {
   DndContext,
-  closestCenter
+  closestCenter,
+  PointerSensor,
+  useSensor,
+  useSensors
 } from "@dnd-kit/core";
+
 import {
   SortableContext,
   verticalListSortingStrategy
@@ -31,6 +35,15 @@ const DraggableCard = ({ app }) => {
   const style = {
     transform: CSS.Translate.toString(transform)
   };
+
+  const sensors = useSensors(
+  useSensor(PointerSensor, {
+    activationConstraint: {
+      distance: 5,
+    },
+  })
+);
+
 
   return (
     <div
@@ -91,9 +104,11 @@ const KanbanBoard = ({ apps, fetchApps }) => {
 
   return (
     <DndContext
-      collisionDetection={closestCenter}
-      onDragEnd={handleDragEnd}
-    >
+  sensors={sensors}
+  collisionDetection={closestCenter}
+  onDragEnd={handleDragEnd}
+>
+
       <div className="kanban-container">
         {columns.map(col => (
           <Column

@@ -5,7 +5,7 @@
   padding: 15px 30px;
   background: #1f1f1f;
   color: white;
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 1000;
 }
@@ -60,11 +60,13 @@
     right: 0;
     background: #1f1f1f;
     flex-direction: column;
-    width: 200px;
+    width: 220px;
     padding: 20px;
-    gap: 20px;
+    gap: 15px;
     display: none;
-    border-left: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 9999; /* VERY IMPORTANT */
   }
 
   .nav-links.active {
