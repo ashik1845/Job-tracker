@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+ font-family: 'Montserrat', sans-serif;
+  background: #121212;
+  color: white;
+  line-height: 1.6;
+}
+
+.container {
+  padding: 20px;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+.stat-card p {
+  font-weight: 700;
+}
+
+
+h2, h3, h4, h5 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+p {
+  font-weight: 400;
+}
+
+/* Hide scrollbar for Chrome, Safari and Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE & old Edge */
+body {
+  -ms-overflow-style: none;
+}

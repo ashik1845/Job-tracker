@@ -1,0 +1,85 @@
+/* ================= CONTAINER ================= */
+
+.form-container {
+  background: #1f1f1f;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ================= FORM GRID ================= */
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ================= INPUT GROUP ================= */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.input-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #2c2c2c;
+  color: white;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+/* Focus effect */
+.input-group input:focus {
+  border-color: #00adb5;
+  box-shadow: 0 0 5px #00adb5;
+}
+
+/* ================= BUTTON ================= */
+
+.submit-btn {
+  grid-column: span 2;
+  padding: 12px;
+  background: #00adb5;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #019aa1;
+  transform: translateY(-2px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-btn {
+    grid-column: span 1;
+  }
+}

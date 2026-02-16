@@ -1,0 +1,94 @@
+.card {
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  color: white;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Active dragging */
+.card:active {
+  cursor: grabbing;
+  opacity: 0.85;
+}
+
+/* ================= STATUS COLORS ================= */
+
+.card.applied {
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+}
+
+.card.oa {
+  background: linear-gradient(135deg, #7b1fa2, #6a1b9a);
+}
+
+.card.interview {
+  background: linear-gradient(135deg, #f57c00, #ef6c00);
+}
+
+.card.offer {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+}
+
+.card.rejected {
+  background: linear-gradient(135deg, #c62828, #b71c1c);
+}
+
+/* ================= TEXT STYLING ================= */
+
+.card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ================= DOMAIN BADGE ================= */
+
+.domain {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ================= INTERVIEW DATE ================= */
+
+.card small {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .card {
+    padding: 14px;
+  }
+
+  .card h4 {
+    font-size: 14px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+}

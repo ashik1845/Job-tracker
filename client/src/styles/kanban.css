@@ -1,0 +1,106 @@
+/* ================= CONTAINER ================= */
+
+.kanban-container {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+  align-items: start; /* 🔥 IMPORTANT */
+}
+
+
+/* ================= COLUMN ================= */
+
+.column {
+  background: #1f1f1f;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  min-height: 250px;
+  transition: 0.3s ease;
+}
+
+.column:hover {
+  transform: translateY(-3px);
+}
+
+/* Column Header */
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.column-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.count-badge {
+  background: #00adb5;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ================= COLUMN BODY ================= */
+
+.column-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ================= CARD ================= */
+
+.card {
+  background: #2c2c2c;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: grab;
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card:active {
+  cursor: grabbing;
+  opacity: 0.8;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1100px) {
+  .kanban-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .kanban-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+  }
+
+  .column {
+    min-width: 250px;
+  }
+
+  .kanban-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .kanban-container::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 5px;
+  }
+}
