@@ -63,6 +63,7 @@
   border-radius: 10px;
   cursor: grab;
   transition: 0.2s ease;
+  touch-action: none;
 }
 
 .card:hover {

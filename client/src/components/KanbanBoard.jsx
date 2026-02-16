@@ -3,9 +3,12 @@ import {
   DndContext,
   closestCenter,
   PointerSensor,
+  TouchSensor,
+  MouseSensor,
   useSensor,
   useSensors
 } from "@dnd-kit/core";
+
 
 import {
   SortableContext,
@@ -80,13 +83,16 @@ const Column = ({ id, apps }) => {
 
 const KanbanBoard = ({ apps, fetchApps }) => {
 
-    const sensors = useSensors(
-  useSensor(PointerSensor, {
+const sensors = useSensors(
+  useSensor(MouseSensor),
+  useSensor(TouchSensor, {
     activationConstraint: {
-      distance: 5,
-    },
+      delay: 150,    
+      tolerance: 5
+    }
   })
 );
+
 
   const handleDragEnd = async (event) => {
     const { active, over } = event;
@@ -105,11 +111,12 @@ const KanbanBoard = ({ apps, fetchApps }) => {
   };
 
   return (
-    <DndContext
+<DndContext
   sensors={sensors}
   collisionDetection={closestCenter}
   onDragEnd={handleDragEnd}
 >
+
 
       <div className="kanban-container">
         {columns.map(col => (
