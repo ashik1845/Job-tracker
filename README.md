@@ -7,7 +7,7 @@ Users can register, log in securely, track applications using a Kanban board, an
 
 ## 🌐 Live Demo
 
-(Deploy link here once deployed)
+## https://hireflow-jobtracker.netlify.app/
 
 ---
 
@@ -207,6 +207,6 @@ http://localhost:5173
 
 **Ashik M**  
 Computer Science Engineering Student  
-Frontend Developer | MERN Stack Enthusiast
+MERN Stack Enthusiast
 
 ---
