@@ -1,29 +1,37 @@
-import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import "../styles/navbar.css";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
 
   const handleLogout = () => {
     localStorage.removeItem("user");
     navigate("/login");
+    setMenuOpen(false);
   };
 
   return (
     <nav className="navbar">
-      <div className="logo"><NavLink to="/">HireFlow</NavLink></div>
+      <div className="logo">
+        <Link to="/">HireFlow</Link>
+      </div>
 
-      <div className="nav-links">
+      {/* Navigation Links */}
+      <div className={`nav-links ${menuOpen ? "active" : ""}`}>
         {user ? (
           <>
-            <NavLink to="/applications">Applications</NavLink>
-            <NavLink to="/analytics">Analytics</NavLink>
+            <NavLink to="/applications" onClick={() => setMenuOpen(false)}>
+              Applications
+            </NavLink>
 
-            <span className="user-name">
-              {user.name}
-            </span>
+            <NavLink to="/analytics" onClick={() => setMenuOpen(false)}>
+              Analytics
+            </NavLink>
+
+            <span className="user-name">{user.name}</span>
 
             <button className="logout-btn" onClick={handleLogout}>
               Logout
@@ -31,10 +39,23 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <NavLink to="/login">Login</NavLink>
-            <NavLink to="/register">Register</NavLink>
+            <NavLink to="/login" onClick={() => setMenuOpen(false)}>
+              Login
+            </NavLink>
+
+            <NavLink to="/register" onClick={() => setMenuOpen(false)}>
+              Register
+            </NavLink>
           </>
         )}
+      </div>
+
+      {/* Hamburger Button */}
+      <div
+        className="hamburger"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
       </div>
     </nav>
   );
